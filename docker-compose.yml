@@ -1,0 +1,16 @@
+
+services:
+
+  backend:
+    build: ./backend/
+    container_name: fastapi_backend
+    restart: "no"
+    network_mode: "host"
+
+  frontend:
+    build: ./frontend/
+    container_name: flask_frontend
+    restart : "no"
+    network_mode: "host"
+    depends_on: 
+      - backend
